@@ -1,7 +1,10 @@
 package com.java.firebase.staffPackage;
 
+import com.java.firebase.studentsPackage.Students;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class StaffController {
@@ -16,6 +19,10 @@ public class StaffController {
         return staffService.getStaff(staffID);
     }
 
+    @GetMapping("/getAllStaff")
+    public List<Staff> getAllStaff() throws Exception {
+        return staffService.getAllStaff();
+    }
 
     @PutMapping("/updateStaff")
     public String updateStaff(@RequestBody Staff staff) throws Exception{

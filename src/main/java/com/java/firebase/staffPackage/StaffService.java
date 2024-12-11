@@ -1,12 +1,13 @@
 package com.java.firebase.staffPackage;
 
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.cloud.FirestoreClient;
+import com.java.firebase.studentsPackage.Students;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Service
@@ -23,6 +24,20 @@ public class StaffService {
             return Staff;
         }
         return null;
+    }
+
+    public List<Staff> getAllStaff() throws Exception {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = dbFirestore.collection("staff").get();
+        List<QueryDocumentSnapshot> documents = future.get().getDocuments();
+        List<Staff> staffList = new ArrayList<>();
+
+        for (QueryDocumentSnapshot document : documents) {
+            Staff staff = document.toObject(Staff.class);
+            staffList.add(staff);
+        }
+
+        return staffList;
     }
 
     public String updateStaff(Staff Staff) throws Exception {

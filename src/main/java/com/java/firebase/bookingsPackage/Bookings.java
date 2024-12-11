@@ -1,4 +1,4 @@
-package com.java.firebase.bookingsPackage;
+/*package com.java.firebase.bookingsPackage;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,4 +11,4 @@ public class Bookings {
     private String email;
     private int phone_number;
     private String password;
-}
+}*/

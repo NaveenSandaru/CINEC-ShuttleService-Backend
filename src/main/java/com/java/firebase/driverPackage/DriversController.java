@@ -1,7 +1,10 @@
 package com.java.firebase.driverPackage;
 
+import com.java.firebase.staffPackage.Staff;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class DriversController {
@@ -16,6 +19,10 @@ public class DriversController {
         return driversService.getDriver(driverID);
     }
 
+    @GetMapping("/getAllDriver")
+    public List<Drivers> getAllDrivers() throws Exception {
+        return driversService.getAllDrivers();
+    }
 
     @PutMapping("/updateDriver")
     public String updateDriver(@RequestBody Drivers driver) throws Exception{

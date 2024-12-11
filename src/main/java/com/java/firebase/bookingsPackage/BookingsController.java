@@ -1,4 +1,4 @@
-package com.java.firebase.bookingsPackage;
+/*package com.java.firebase.bookingsPackage;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,4 +31,4 @@ public class BookingsController {
     public ResponseEntity<String> testGetEndPoint(){
         return ResponseEntity.ok("Test get endpoint is working");
     }
-}
+}*/

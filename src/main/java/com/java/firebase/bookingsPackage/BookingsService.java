@@ -1,4 +1,4 @@
-package com.java.firebase.bookingsPackage;
+/*package com.java.firebase.bookingsPackage;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentReference;
@@ -36,4 +36,4 @@ public class BookingsService {
         ApiFuture<WriteResult> writeResult = dbFireStore.collection("drivers").document(driverID).delete();
         return "Deleted Successfully." + driverID;
     }
-}
+}*/
